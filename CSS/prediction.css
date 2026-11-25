@@ -1,0 +1,581 @@
+/* =====================================
+   CRYSTALVOLT - PREDICTION PAGE
+===================================== */
+
+#main-content {
+    margin-left: 260px;
+    min-height: 100vh;
+    padding: 45px 55px;
+    display: block;
+    position: relative;
+    overflow: visible;
+}
+
+.prediction-section {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+.section-tag {
+    color: #48C6CF;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.prediction-section h1 {
+    font-size: 34px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.prediction-section h1 span {
+    color: #48C6CF;
+}
+
+.prediction-description {
+    color: #d0e5ed;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* =====================================
+   VOLTAGE DASHBOARD
+===================================== */
+
+.voltage-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 35px;
+    align-items: stretch;
+}
+
+/* VOLTAGE CARD */
+
+.voltage-card,
+.battery-display {
+    background: rgba(24, 59, 86, 0.55);
+    border: 1px solid rgba(72, 198, 207, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 12px 35px rgba(10, 45, 65, 0.15);
+}
+
+.card-label {
+    color: #48C6CF;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.voltage-value {
+    margin-top: 22px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+#voltage-value {
+    font-size: 65px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(72, 198, 207, 0.35);
+}
+
+.voltage-unit {
+    font-size: 25px;
+    color: #48C6CF;
+}
+
+.voltage-status {
+    color: #b8dce5;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.material-details {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.material-details div {
+    background: rgba(72, 198, 207, 0.08);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.material-details span {
+    display: block;
+    color: #b8dce5;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.material-details strong {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* BATTERY DISPLAY */
+
+.battery-display {
+    text-align: center;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.battery-display h2 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* 3D BATTERY BODY */
+
+.battery-3d {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 700px;
+    filter: drop-shadow(0 15px 20px rgba(0, 150, 200, 0.2));
+    animation: batteryFloat 3s ease-in-out infinite;
+}
+
+.battery-terminal {
+    width: 48px;
+    height: 17px;
+    background: linear-gradient(
+        90deg,
+        #789eaa,
+        #e0faff,
+        #6b9aa8
+    );
+    border-radius: 6px 6px 2px 2px;
+}
+
+.battery-body {
+    width: 130px;
+    height: 180px;
+    padding: 12px;
+    border: 3px solid #80dce8;
+    border-radius: 15px;
+    background: linear-gradient(
+        110deg,
+        rgba(20, 85, 115, 0.9),
+        rgba(40, 160, 185, 0.35),
+        rgba(15, 70, 105, 0.9)
+    );
+    box-shadow:
+        inset 0 0 20px rgba(72, 220, 255, 0.25),
+        0 0 20px rgba(72, 198, 207, 0.3);
+    transform: rotateY(-10deg);
+    display: flex;
+    align-items: flex-end;
+}
+
+.battery-cells {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
+}
+
+.battery-cell {
+    flex: 1;
+    border-radius: 4px;
+    background: rgba(72, 198, 207, 0.12);
+    border: 1px solid rgba(72, 198, 207, 0.25);
+    /* FIXED: removed the stray asterisks that invalidated this rule */
+    transition: background 0.6s ease, box-shadow 0.6s ease;
+}
+
+.battery-cell.active {
+    background: linear-gradient(
+        90deg,
+        #18a9cf,
+        #7af5ec
+    );
+    box-shadow: 0 0 12px rgba(72, 230, 240, 0.65);
+}
+
+.battery-base {
+    width: 145px;
+    height: 12px;
+    background: linear-gradient(
+        90deg,
+        #477f91,
+        #d2faff,
+        #477f91
+    );
+    border-radius: 3px 3px 8px 8px;
+}
+
+.battery-caption {
+    margin-top: 22px;
+    color: #b8dce5;
+    font-size: 13px;
+}
+
+@keyframes batteryFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =====================================
+   MODEL COMPARISON SECTION
+===================================== */
+
+.model-comparison {
+    margin-top: 65px;
+    padding-bottom: 50px;
+    animation: sectionReveal 0.9s ease forwards;
+}
+
+.model-comparison h2 {
+    color: #ffffff;
+    font-size: 28px;
+    margin: 12px 0;
+}
+
+.comparison-description {
+    color: #d0e5ed;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.comparison-card {
+    padding: 30px;
+    border-radius: 18px;
+    background: rgba(24, 59, 86, 0.55);
+    border: 1px solid rgba(72, 198, 207, 0.3);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 12px 35px rgba(10, 45, 65, 0.15);
+}
+
+.comparison-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+.hidden-section {
+    display: none;
+}
+
+@keyframes sectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================
+   SHAP ANALYSIS SECTIONS
+===================================== */
+
+.shap-section {
+    width: 100%;
+    margin-top: 65px;
+    padding-bottom: 50px;
+    animation: sectionReveal 0.9s ease forwards;
+}
+
+.shap-section h2 {
+    color: #ffffff;
+    font-size: 28px;
+    margin: 12px 0;
+}
+
+.shap-description {
+    color: #d0e5ed;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.shap-card {
+    padding: 30px;
+    border-radius: 18px;
+    background: rgba(24, 59, 86, 0.55);
+    border: 1px solid rgba(72, 198, 207, 0.3);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 12px 35px rgba(10, 45, 65, 0.15);
+}
+
+.shap-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   SHOW MATERIAL DETAILS
+===================================== */
+
+.details-navigation {
+    margin: 70px auto 40px;
+    padding: 40px 25px;
+    text-align: center;
+    max-width: 850px;
+    border-radius: 22px;
+    background: rgba(24, 59, 86, 0.55);
+    border: 1px solid rgba(72, 198, 207, 0.35);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 12px 35px rgba(10, 45, 65, 0.2);
+}
+
+.details-navigation h2 {
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.details-navigation p {
+    color: #d0e5ed;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.show-details-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 10px;
+    background: linear-gradient(120deg, #48C6CF, #8DE5E9);
+    color: #123D53;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(72, 198, 207, 0.2);
+}
+
+.show-details-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(72, 198, 207, 0.4);
+}
+
+
+/* =====================================
+   UNSEEN MATERIAL DISPLAY
+===================================== */
+
+.voltage-card.cv-unseen-mode > .card-label,
+.voltage-card.cv-unseen-mode > .voltage-value,
+.voltage-card.cv-unseen-mode > .voltage-status,
+.voltage-card.cv-unseen-mode > .material-details {
+    display: none;
+}
+
+.cv-unseen-voltage-result {
+    margin-top: 28px;
+    padding: 22px;
+    border-radius: 14px;
+    background: rgba(72, 198, 207, 0.08);
+    border: 1px solid rgba(72, 198, 207, 0.3);
+}
+
+.cv-unseen-voltage-result .voltage-value {
+    margin-top: 15px;
+}
+
+#cv-unseen-prediction-result .cv-unseen-summary {
+    margin-top: 18px;
+}
+
+#cv-unseen-prediction-result .cv-unseen-summary strong {
+    overflow-wrap: anywhere;
+}
+
+.cv-unseen-workflow {
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   UNSEEN MATERIAL LAYOUT
+========================================= */
+
+/* Hide the battery visualization only in unseen mode */
+.voltage-card.cv-unseen-mode + .battery-display {
+    display: none !important;
+}
+
+/* Give the unseen workflow the full dashboard width */
+.voltage-dashboard:has(.voltage-card.cv-unseen-mode) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+}
+
+/* Let the unseen prediction card fill the available space */
+.voltage-card.cv-unseen-mode {
+    width: 100%;
+    max-width: 100%;
+    grid-column: 1 / -1;
+}
+
+/* Improve the unseen result panel */
+#cv-unseen-prediction-result {
+    margin-top: 24px;
+    padding: 22px;
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 117, 190, 0.25),
+        rgba(20, 190, 210, 0.16)
+    );
+    border: 1px solid rgba(72, 198, 207, 0.35);
+}
+
+/* Make voltage more prominent */
+.cv-unseen-voltage-result {
+    text-align: center;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+#cv-unseen-voltage-value {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+#cv-unseen-voltage-status {
+    margin-top: 8px;
+}
+
+/* Arrange the four details in a neat grid */
+#cv-unseen-prediction-result .cv-unseen-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+#cv-unseen-prediction-result .cv-unseen-summary > div {
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(8, 30, 50, 0.45);
+    text-align: center;
+}
+
+#cv-unseen-prediction-result .cv-unseen-summary span {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    color: #9edce8;
+}
+
+#cv-unseen-prediction-result .cv-unseen-summary strong {
+    display: block;
+    font-size: 15px;
+    color: #ffffff;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+    #cv-unseen-prediction-result .cv-unseen-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    #cv-unseen-prediction-result .cv-unseen-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   SHAP CHART REFINEMENTS
+   (preserve the existing CrystalVolt dark theme)
+========================================= */
+
+.shap-card .chart-container {
+    min-height: 350px;
+}
+
+#shap-summary-chart,
+#shap-impact-chart,
+#shap-importance-chart {
+    width: 100% !important;
+}
+
+@media (max-width: 768px) {
+    .shap-card {
+        padding: 18px;
+    }
+
+    .shap-card .chart-container {
+        min-height: 320px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE LAYOUT (tablet / mobile)
+   Note: if the sidebar is position: fixed, sidebar.css
+   also needs a collapse rule at this breakpoint.
+========================================= */
+
+@media (max-width: 900px) {
+    #main-content {
+        margin-left: 0;
+        padding: 25px 18px;
+    }
+
+    .voltage-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .material-details {
+        grid-template-columns: 1fr;
+    }
+
+    #voltage-value {
+        font-size: 48px;
+    }
+}
+.status-indicator {
+    display: none;
+}

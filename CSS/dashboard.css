@@ -1,0 +1,194 @@
+
+/* =====================================
+   BATTERY AI - DASHBOARD HERO
+===================================== */
+
+#main-content {
+    margin-left: 260px;
+    min-height: 100vh;
+    padding: 40px 65px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-section {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 720px;
+    padding: 35px 0;
+}
+
+/* TOP LABEL */
+
+.hero-tag {
+    display: inline-block;
+    padding: 10px 17px;
+    margin-bottom: 28px;
+
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 30px;
+
+    background: rgba(0, 190, 255, 0.08);
+    color: #00d9ff;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* MAIN HEADING */
+
+.hero-content h1 {
+    font-size: clamp(38px, 4.5vw, 65px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+
+    color: #f3f8ff;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #00d9ff,
+        #579bff,
+        #a18bff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* DESCRIPTION */
+
+.hero-description {
+    max-width: 610px;
+
+    color: #a5bad1;
+    font-size: 16px;
+    line-height: 1.9;
+
+    margin-bottom: 35px;
+}
+
+/* PREDICTION BUTTON */
+
+.prediction-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 16px 25px;
+    border-radius: 9px;
+
+    background: linear-gradient(
+        110deg,
+        #087fd0,
+        #00bde8
+    );
+
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow: 0 0 25px rgba(0, 174, 255, 0.2);
+    transition: 0.3s ease;
+}
+
+.prediction-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 35px rgba(0, 190, 255, 0.45);
+}
+
+.button-arrow {
+    font-size: 21px;
+    transition: transform 0.3s ease;
+}
+
+.prediction-button:hover .button-arrow {
+    transform: translateX(5px);
+}
+
+/* BOTTOM CAPTION */
+
+.hero-caption {
+    margin-top: 22px;
+    color: #718ba7;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    #main-content {
+        padding: 30px;
+    }
+
+    
+    
+    .hero-content h1 {
+    font-size: clamp(27px, 2.7vw, 37px);
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+    font-weight: 650;
+    color: #f3f8ff;
+    margin-bottom: 22px;
+    max-width: 620px;
+}
+
+.hero-content h1 span {
+    display: block;
+    font-size: 0.82em;
+
+    background: linear-gradient(
+        90deg,
+        #00d9ff,
+        #579bff,
+        #a18bff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+}
+
+
+
+/* PROJECT TITLE POSITION AND SIZE */
+
+.hero-content {
+    transform: translateY(-25px);
+}
+
+.hero-content h1 {
+    font-size: 30px !important;
+    line-height: 1.35;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    max-width: 540px;
+}
+
+.hero-content h1 span {
+    font-size: 25px !important;
+    line-height: 1.45;
+    display: block;
+}
+.status-indicator {
+    display: none;
+}
+

@@ -1,0 +1,175 @@
+
+/* =====================================
+   BATTERY AI - FUTURISTIC SIDEBAR
+===================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    padding: 32px 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(5, 15, 32, 0.88);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border-right: 1px solid rgba(0, 190, 255, 0.15);
+
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.2);
+
+    z-index: 100;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -1px;
+
+    color: #ffffff;
+    margin-bottom: 65px;
+}
+
+.logo-icon {
+    font-size: 34px;
+    color: #00d9ff;
+    text-shadow: 0 0 18px #00bfff;
+}
+
+.logo-highlight {
+    color: #00d9ff;
+}
+
+/* NAVIGATION */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-heading {
+    color: #66829f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    margin: 12px 0 8px 10px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 15px;
+    border-radius: 10px;
+
+    color: #9bb0c8;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border: 1px solid transparent;
+
+    transition: all 0.3s ease;
+}
+
+/* NAVIGATION ICONS */
+
+.nav-icon {
+    width: 22px;
+    font-size: 21px;
+    text-align: center;
+    color: #63a9d8;
+}
+
+/* HOVER EFFECT */
+
+.nav-link:hover {
+    background: rgba(0, 174, 255, 0.10);
+    color: #ffffff;
+
+    border-color: rgba(0, 190, 255, 0.2);
+
+    transform: translateX(5px);
+}
+
+.nav-link:hover .nav-icon {
+    color: #00d9ff;
+    text-shadow: 0 0 12px #00aaff;
+}
+
+/* ACTIVE PAGE */
+
+.nav-link.active {
+    background: linear-gradient(
+        100deg,
+        rgba(0, 153, 255, 0.24),
+        rgba(0, 217, 255, 0.07)
+    );
+
+    color: #ffffff;
+
+    border: 1px solid rgba(0, 190, 255, 0.3);
+
+    box-shadow: inset 3px 0 0 #00d9ff;
+}
+
+.nav-link.active .nav-icon {
+    color: #00d9ff;
+}
+
+/* DIVIDER */
+
+.nav-divider {
+    height: 1px;
+    background: rgba(120, 170, 210, 0.15);
+    margin: 20px 0 12px;
+}
+
+/* SIDEBAR FOOTER */
+
+.sidebar-footer {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px 10px;
+
+    color: #8da8c1;
+    font-size: 12px;
+
+    border-top: 1px solid rgba(120, 170, 210, 0.15);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    background: #00e6a0;
+    box-shadow: 0 0 12px #00e6a0;
+}
+
+.status-indicator {
+    display: none;
+}
+.sidebar-footer {
+    display: none !important;
+}

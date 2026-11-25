@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CrystalVolt prediction results: predicted electrode voltage, model comparison and SHAP explanations.">
+
+    <title>CrystalVolt | Prediction Results</title>
+
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link rel="stylesheet" href="../CSS/prediction.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span class="logo-icon" aria-hidden="true">✧</span>
+                <span>Crystal<span class="logo-highlight">Volt</span></span>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Main menu">
+                <p class="nav-heading">MAIN MENU</p>
+
+                <a href="index.html" class="nav-link">
+                    <span class="nav-icon" aria-hidden="true">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="materials.html" class="nav-link">
+                    <span class="nav-icon" aria-hidden="true">◇</span>
+                    <span>Materials Input</span>
+                </a>
+
+                <a href="prediction.html" class="nav-link active" aria-current="page">
+                    <span class="nav-icon" aria-hidden="true">◈</span>
+                    <span>Prediction</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon" aria-hidden="true">ⓘ</span>
+                    <span>About Project</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <span class="status-dot" aria-hidden="true"></span>
+                AI Platform Active
+            </div>
+
+        </aside>
+
+        <!-- Prediction Content -->
+        <main id="main-content">
+
+            <section class="prediction-section">
+
+                <p class="section-tag">CRYSTALVOLT / VOLTAGE ANALYSIS</p>
+
+                <h1>Prediction <span>Results</span></h1>
+
+                <p class="prediction-description">
+                    Your selected electrode material is ready for analysis.
+                </p>
+
+                <div class="voltage-dashboard">
+
+                    <!-- Voltage Result -->
+                    <div class="voltage-card">
+
+                        <div class="card-label">PREDICTED VOLTAGE</div>
+
+                        <div class="voltage-value">
+                            <span id="voltage-value">--.--</span>
+                            <span class="voltage-unit">V</span>
+                        </div>
+
+                        <p class="voltage-status" id="voltage-status" role="status" aria-live="polite">
+                            Waiting for prediction...
+                        </p>
+
+                        <div class="material-details">
+
+                            <div>
+                                <span>Electrode Formula</span>
+                                <strong id="display-formula">Loading...</strong>
+                            </div>
+
+                            <div>
+                                <span>Working Metal</span>
+                                <strong id="display-metal">Loading...</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- 3D Battery Visual -->
+                    <div class="battery-display">
+
+                        <h2>Energy Visualization</h2>
+
+                        <div class="battery-3d" aria-hidden="true">
+
+                            <div class="battery-terminal"></div>
+
+                            <div class="battery-body">
+
+                                <div class="battery-cells" id="battery-cells">
+                                    <div class="battery-cell"></div>
+                                    <div class="battery-cell"></div>
+                                    <div class="battery-cell"></div>
+                                    <div class="battery-cell"></div>
+                                    <div class="battery-cell"></div>
+                                    <div class="battery-cell"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="battery-base"></div>
+
+                        </div>
+
+                        <p class="battery-caption" id="battery-caption" aria-live="polite">
+                            Waiting for voltage data
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- MODEL COMPARISON SECTION -->
+            <section class="model-comparison hidden-section" id="model-comparison">
+
+                <div class="section-tag">CRYSTALVOLT / MODEL EVALUATION</div>
+
+                <h2>Machine Learning Model Comparison</h2>
+
+                <p class="comparison-description">
+                    Compare the performance of five machine learning models
+                    used for electrode voltage prediction.
+                </p>
+
+                <div class="comparison-card">
+
+                    <h3>Model Performance Analysis</h3>
+
+                    <div class="chart-container">
+                        <canvas id="model-comparison-chart" role="img"
+                            aria-label="Bar chart comparing the performance of five machine learning models"></canvas>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SHAP ANALYSIS SECTION 1 -->
+            <section class="shap-section hidden-section" id="shap-importance">
+                <div class="section-tag">CRYSTALVOLT / SHAP ANALYSIS 01</div>
+                <h2>Feature Importance</h2>
+                <p class="shap-description">
+                    Identify which material features contribute most to the voltage prediction.
+                </p>
+
+                <div class="shap-card">
+                    <h3>Top Contributing Features</h3>
+                    <div class="chart-container">
+                        <canvas id="shap-importance-chart" role="img"
+                            aria-label="Bar chart of the features with the highest mean absolute SHAP value"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SHAP ANALYSIS SECTION 2 -->
+            <section class="shap-section hidden-section" id="shap-summary">
+                <div class="section-tag">CRYSTALVOLT / SHAP ANALYSIS 02</div>
+                <h2>SHAP Summary Plot</h2>
+                <p class="shap-description">
+                    Understand how different feature values influence the predicted voltage.
+                </p>
+
+                <div class="shap-card">
+                    <h3>Feature Impact Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="shap-summary-chart" role="img"
+                            aria-label="SHAP summary plot showing how feature values push the predicted voltage up or down"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SHAP ANALYSIS SECTION 3 -->
+            <section class="shap-section hidden-section" id="shap-impact">
+                <div class="section-tag">CRYSTALVOLT / SHAP ANALYSIS 03</div>
+                <h2>Feature Impact Analysis</h2>
+                <p class="shap-description">
+                    Explore how an individual material feature affects the predicted voltage.
+                </p>
+
+                <div class="shap-card">
+                    <h3>Local Feature Contribution / Dependence Analysis</h3>
+                    <div class="chart-container">
+                        <canvas id="shap-impact-chart" role="img"
+                            aria-label="Dependence plot of one feature value against its SHAP contribution"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SHOW MATERIAL DETAILS BUTTON -->
+            <section class="details-navigation">
+                <h2>Explore Material Properties</h2>
+                <p>
+                    View the scientific and structural properties
+                    of your selected electrode material.
+                </p>
+
+                <a href="about.html" class="show-details-btn">
+                    Show Material Details →
+                </a>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../JS/sidebar.js" defer></script>
+    <!-- Chart.js pinned to an exact version so a CDN update cannot break the charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js" defer></script>
+    <script src="../JS/prediction.js" defer></script>
+
+</body>
+</html>

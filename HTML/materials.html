@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CrystalVolt | Material Input</title>
+
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link rel="stylesheet" href="../CSS/materials.css">
+</head>
+
+<body>
+
+    <!-- Website Content -->
+    <div id="app">
+
+        <!-- Sidebar -->
+       <!-- <aside class="sidebar">
+
+            <div class="logo">
+                <span class="logo-icon">✧</span>
+                <span>Crystal<span class="logo-highlight">Volt</span></span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <p class="nav-heading">MAIN MENU</p>
+
+                <a href="index.html" class="nav-link">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="materials.html" class="nav-link active">
+                    <span class="nav-icon">◇</span>
+                    <span>Materials Input</span>
+                </a>
+
+                <a href="prediction.html" class="nav-link">
+                    <span class="nav-icon">◈</span>
+                    <span>Prediction</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">ⓘ</span>
+                    <span>About Project</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <span class="status-dot"></span>
+                AI Platform Active
+            </div>
+
+        </aside>
+    -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <span class="logo-icon">✧</span>
+        <span>Crystal<span class="logo-highlight">Volt</span></span>
+    </div>
+
+    <nav class="sidebar-nav">
+        <p class="nav-heading">MAIN MENU</p>
+
+        <a href="index.html" class="nav-link">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="materials.html" class="nav-link">
+            <span class="nav-icon">◇</span>
+            <span>Materials Input</span>
+        </a>
+
+        <a href="prediction.html" class="nav-link">
+            <span class="nav-icon">◈</span>
+            <span>Prediction</span>
+        </a>
+
+        <a href="about.html" class="nav-link active">
+            <span class="nav-icon">ⓘ</span>
+            <span>About Project</span>
+        </a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        AI Platform Active
+    </div>
+
+</aside>
+
+        <!-- Main Content -->
+        <main id="main-content">
+
+    <section class="materials-section">
+
+        <div class="materials-heading">
+            <p class="section-tag">CRYSTALVOLT / MATERIAL ANALYSIS</p>
+
+            <h1>Explore Your <span>Battery Material</span></h1>
+
+            <p>
+                Enter your electrode material details to predict
+                its voltage using machine learning.
+            </p>
+        </div>
+
+        <div class="materials-container">
+
+            <!-- Input Form -->
+            <div class="input-panel">
+
+                <h2>Material Information</h2>
+
+                <div class="input-group">
+                    <label for="electrode-formula">Electrode Formula</label>
+                    <input
+                        type="text"
+                        id="electrode-formula"
+                        placeholder="Example: LiFePO4"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="metal-type">Type of Metal</label>
+
+                    <select id="metal-type">
+                        <option value="">Select working metal</option>
+                        <option value="Li">Lithium (Li)</option>
+                        <option value="Na">Sodium (Na)</option>
+                        <option value="K">Potassium (K)</option>
+                        <option value="Mg">Magnesium (Mg)</option>
+                        <option value="Ca">Calcium (Ca)</option>
+                        <option value="Al">Aluminium (Al)</option>
+                        <option value="Zn">Zinc (Zn)</option>
+                        <option value="Y">Yttrium (Y)</option>
+                    </select>
+                </div>
+
+                <button type="button" class="results-button">
+                    Get Results <span>→</span>
+                </button>
+
+            </div>
+
+            <!-- Battery Visual Area -->
+            <!-- Battery Visual Area -->
+<div class="battery-visual">
+
+    <img
+        src="../ASSETS/images/crystal-battery.png"
+        alt="CrystalVolt futuristic battery"
+        class="battery-image"
+    >
+
+</div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+    </div>
+
+    <script src="../JS/sidebar.js" defer></script>
+    <script src="../JS/materials.js" defer></script>
+
+</body>
+</html>

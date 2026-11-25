@@ -1,0 +1,166 @@
+
+/* =================================
+   CRYSTALVOLT - MATERIAL INPUT PAGE
+================================= */
+
+#main-content {
+    margin-left: 260px;
+    min-height: 100vh;
+    padding: 45px 55px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.materials-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.materials-heading {
+    margin-bottom: 35px;
+}
+
+.section-tag {
+    color: #35cfff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.materials-heading h1 {
+    font-size: 34px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.materials-heading h1 span {
+    color: #36cfff;
+}
+
+.materials-heading p:last-child {
+    color: #a9bfd5;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* MATERIAL INPUT LAYOUT */
+
+.materials-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+/* INPUT PANEL */
+
+.input-panel {
+    padding: 35px;
+    border: 1px solid rgba(65, 190, 255, 0.22);
+    border-radius: 18px;
+    background: rgba(15, 35, 60, 0.72);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.input-panel h2 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    color: #d8eaff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid rgba(100, 190, 255, 0.3);
+    border-radius: 9px;
+    outline: none;
+    background: #10243d;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #35cfff;
+    box-shadow: 0 0 12px rgba(53, 207, 255, 0.15);
+}
+
+.input-group input::placeholder {
+    color: #829bb5;
+}
+
+/* GET RESULTS BUTTON */
+
+.results-button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(100deg, #087bdb, #13bce9);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.results-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 180, 255, 0.25);
+}
+
+.results-button span {
+    margin-left: 10px;
+}
+/* BATTERY IMAGE SIZE */
+
+
+.battery-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 430px;
+    overflow: hidden;
+}
+
+
+
+
+
+.battery-image {
+    width: 115%;
+    max-width: 520px;
+    height: 430px;
+    object-fit: contain;
+    display: block;
+
+    mix-blend-mode: lighten;
+
+    filter: drop-shadow(
+        0 0 25px rgba(72, 220, 255, 0.25)
+    );
+}
+.status-indicator {
+    display: none;
+}
