@@ -2,7 +2,7 @@
    CRYSTALVOLT - SELECTED MATERIAL PROPERTIES
 ===================================== */
 
-const API_BASE_URL = "https://crystalvlt-api.onrender.com/https://crystalvlt-api.onrender.com/";
+const API_BASE_URL = "https://crystalvlt-api.onrender.com/";
 
 const statusElement = document.getElementById("properties-status");
 const propertiesContainer = document.getElementById("material-properties");
