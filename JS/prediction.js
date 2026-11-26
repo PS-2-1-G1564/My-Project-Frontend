@@ -2,7 +2,7 @@
 // CRYSTALVOLT - PREDICTION PAGE (corrected)
 // =====================================
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://crystalvlt-api.onrender.com/";
 
 // Safely read material details from the Materials Input page
 function readStoredMaterial() {
