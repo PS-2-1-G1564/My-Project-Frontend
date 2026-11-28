@@ -1,5 +1,5 @@
 
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
+import * as THREE from "https://crystalvlt-api.onrender.com";
 
 // =====================================
 // 1. CREATE THE 3D SCENE

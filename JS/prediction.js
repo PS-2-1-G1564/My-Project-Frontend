@@ -2,7 +2,7 @@
 // CRYSTALVOLT - PREDICTION PAGE (corrected)
 // =====================================
 
-const API_BASE_URL = "https://crystalvlt-api.onrender.com";
+const API_BASE_URL = "https://assurance-untitled-reviewing-fires.trycloudflare.com";
 
 // Safely read material details from the Materials Input page
 function readStoredMaterial() {
