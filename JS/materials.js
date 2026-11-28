@@ -5,8 +5,8 @@
 
 const resultsButton = document.querySelector(".results-button");
 
-resultsButton.addEventListener("click", function () {
-
+if (resultsButton) {
+    resultsButton.addEventListener("click", function () {
     // Get user inputs
     const formula = document.getElementById("electrode-formula").value.trim();
 
@@ -22,6 +22,7 @@ resultsButton.addEventListener("click", function () {
         alert("Please select the type of metal.");
         return;
     }
+
 
 const firstElementMatch = formula.match(/^([A-Z][a-z]?)/);
 
@@ -48,3 +49,4 @@ if (!firstElementMatch || firstElementMatch[1] !== metal) {
     window.location.href = "prediction.html";
 
 });
+}
